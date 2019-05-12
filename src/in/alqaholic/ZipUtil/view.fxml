@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" prefHeight="320.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="in.alqaholic.ZipUtil.Main">
+   <children>
+      <JFXTabPane fx:id="tabs" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="encryptTab" text="Encrypt">
+              <content>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <children>
+                        <VBox layoutX="74.0" layoutY="43.0" spacing="20.0">
+                           <children>
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <JFXTextField fx:id="file_input_encrypt" editable="true" labelFloat="true" promptText="Input" />
+                                    <JFXButton buttonType="RAISED" onAction="#openFile" style="-fx-background-color: rgb(0,188,212);" text="Open File" textFill="WHITE" />
+                                    <JFXButton buttonType="RAISED" onAction="#openFolder" style="-fx-background-color: rgb(0,188,212);" text="Open Folder" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <JFXTextField fx:id="secretKeyEncrypt" labelFloat="true" promptText="Sercret Key">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin></JFXTextField>
+                              <JFXTextField fx:id="securityQuestion" labelFloat="true" promptText="Security Question" />
+                              <JFXTextField fx:id="answer" labelFloat="true" promptText="Answer" />
+                              <JFXButton buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#encrypt" style="-fx-background-color: rgb(0,188,212);" text="Encrypt" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="decryptTab" text="Decrypt">
+              <content>
+                <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <children>
+                        <VBox layoutX="143.0" layoutY="92.0" spacing="20.0">
+                           <children>
+                              <HBox spacing="20.0">
+                                 <children>
+                                    <JFXTextField fx:id="file_input_decrypt" editable="true" labelFloat="true" promptText="Encrypted File" />
+                                    <JFXButton buttonType="RAISED" onAction="#openEncryptedFile" style="-fx-background-color: rgb(0,188,212);" text="Open" textFill="WHITE" />
+                                 </children>
+                              </HBox>
+                              <JFXTextField fx:id="secretKeyDecrypt" labelFloat="true" promptText="Sercret Key">
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" />
+                                 </VBox.margin></JFXTextField>
+                              <JFXButton buttonType="RAISED" maxWidth="1.7976931348623157E308" onAction="#decrypt" style="-fx-background-color: rgb(0,188,212);" text="Decrypt" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+         </tabs>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+      </JFXTabPane>
+   </children>
+</StackPane>
